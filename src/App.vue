@@ -1,7 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { retrieveLaunchParams } from '@tma.js/sdk';
+const { initDataRaw, initData } = retrieveLaunchParams();
+</script>
 
 <template>
-  <h1>Hello, World!</h1>
+  <div>
+    <h1>Hello, World!</h1>
+    {{initDataRaw}}
+    {{ initData}}
+  </div>
 </template>
 
 <style scoped></style>
