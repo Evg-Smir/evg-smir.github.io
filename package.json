@@ -10,7 +10,7 @@
     "dev": "vite",
     "lint": "echo \"Eslint is good\"",
     "test": "echo \"Test is good\"",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "test:unit": "vitest",
     "build-only": "vite build",
