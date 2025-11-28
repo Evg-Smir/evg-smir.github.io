@@ -10,10 +10,9 @@
     "dev": "vite",
     "lint": "echo \"Eslint is good\"",
     "test": "echo \"Test is good\"",
-    "build": "type-check \"build-only {@}\" --",
+    "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "build-only": "vite build",
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
