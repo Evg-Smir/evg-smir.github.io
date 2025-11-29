@@ -7,6 +7,13 @@ let tg = window?.Telegram?.WebApp;
 console.log(tg);
 console.log(initDataRaw);
 console.log(initData);
+
+fetch('https://example.com/api', {
+  method: 'POST',
+  headers: {
+    Authorization: `tma ${initDataRaw}`
+  },
+});
 </script>
 
 <template>
