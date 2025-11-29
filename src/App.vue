@@ -1,15 +1,12 @@
 <script setup lang="ts">
-import { retrieveLaunchParams, retrieveRawInitData } from '@tma.js/sdk';
-const { initData } = retrieveLaunchParams();
+import { retrieveLaunchParams } from '@tma.js/sdk';
+const { initDataRaw, initData } = retrieveLaunchParams();
 
-const initDataRaw = retrieveRawInitData()
+let tg = window?.Telegram?.WebApp;
 
-fetch('https://example.com/api', {
-  method: 'POST',
-  headers: {
-    Authorization: `tma ${initDataRaw}`
-  },
-});
+console.log(tg);
+console.log(initDataRaw);
+console.log(initData);
 </script>
 
 <template>
