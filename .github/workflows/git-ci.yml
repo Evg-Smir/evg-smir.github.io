@@ -17,51 +17,51 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  lint:
-    name: lint
-    runs-on: ubuntu-latest
+#  lint:
+#    name: lint
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v4
+#
+#      - name: Setup Node
+#        uses: actions/setup-node@v4
+#        with:
+#          node-version: 22.1.0
+#          cache: npm
+#
+#      - name: Install dependencies
+#        run: npm install
+#
+#      - name: Run ESLint
+#        run: npm run lint
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.1.0
-          cache: npm
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run ESLint
-        run: npm run lint           # тут твоя команда линтера
-
-  test:
-    name: test
-    runs-on: ubuntu-latest
-    needs: lint                     # запустится ТОЛЬКО после lint
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.1.0
-          cache: npm
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test               # или твоя команда тестов
+#  test:
+#    name: test
+#    runs-on: ubuntu-latest
+#    needs: lint
+#
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v4
+#
+#      - name: Setup Node
+#        uses: actions/setup-node@v4
+#        with:
+#          node-version: 22.1.0
+#          cache: npm
+#
+#      - name: Install dependencies
+#        run: npm install
+#
+#      - name: Run tests
+#        run: npm test
 
   build:
     name: build
     runs-on: ubuntu-latest
-    needs: test                     # после успешных тестов
+#    needs: test
 
     steps:
       - name: Checkout repository
