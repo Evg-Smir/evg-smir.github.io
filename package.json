@@ -1,39 +1,42 @@
 {
-  "name": "-",
-  "version": "0.0.0",
+  "name": "vuejs-template",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": "^20.19.0 || >=22.12.0"
-  },
+  "homepage": "https://telegram-mini-apps.github.io/vuejs-template",
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
-    "lint": "echo \"Eslint is good\"",
-    "test": "echo \"Test is good\"",
-    "build": "vite build",
+    "dev:https": "cross-env HTTPS=true vite",
+    "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
-    "test:unit": "vitest",
-    "type-check": "vue-tsc --build"
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --report-unused-disable-directives --max-warnings 0 --fix"
   },
   "dependencies": {
-    "@tma.js/sdk": "^3.1.2",
-    "pinia": "^3.0.4",
-    "vue": "^3.5.25",
+    "@tma.js/sdk-vue": "^1.0.8",
+    "@tonconnect/ui": "^2.0.9",
+    "eruda": "^3.4.1",
+    "vue": "^3.5.22",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
-    "@tsconfig/node24": "^24.0.3",
-    "@types/jsdom": "^27.0.0",
-    "@types/node": "^24.10.1",
-    "@vitejs/plugin-vue": "^6.0.2",
-    "@vue/test-utils": "^2.4.6",
-    "@vue/tsconfig": "^0.8.1",
-    "jsdom": "^27.2.0",
-    "npm-run-all2": "^8.0.4",
-    "typescript": "~5.9.0",
-    "vite": "^7.2.4",
-    "vite-plugin-vue-devtools": "^8.0.5",
-    "vitest": "^4.0.14",
-    "vue-tsc": "^3.1.5"
+    "@tsconfig/node22": "^22.0.0",
+    "@types/node": "^22.9.0",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vue/eslint-config-typescript": "^14.1.3",
+    "@vue/tsconfig": "^0.5.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.14.0",
+    "eslint-plugin-vue": "^9.30.0",
+    "gh-pages": "^6.2.0",
+    "npm-run-all2": "^7.0.1",
+    "typescript": "~5.9.3",
+    "vite": "^5.4.10",
+    "vite-plugin-mkcert": "^1.17.6",
+    "vite-plugin-vue-devtools": "^7.5.4",
+    "vue-tsc": "^3.1.1"
   }
 }

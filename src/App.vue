@@ -1,13 +1,9 @@
 <script setup lang="ts">
-const userData = window?.Telegram?.WebApp?.initDataUnsafe?.user;
+import { useBackButton } from '@/composables/useBackButton';
 
+useBackButton();
 </script>
 
 <template>
-  <div>
-    <h1>Hello, {{ userData.first_name }}</h1>
-    <img :src="userData.photo_url" alt="">
-  </div>
+  <RouterView />
 </template>
-
-<style scoped></style>
